@@ -7,8 +7,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="script.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
 </head>
 <body>
 
@@ -16,11 +16,11 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">ETL</a>
+      <a class="navbar-brand" href="index.html">ETL</a>
     </div>
-    <button class="btn btn-danger navbar-btn">Extract</button>
-	<button class="btn btn-danger navbar-btn disabled">Transform</button>
-	<button class="btn btn-danger navbar-btn disabled">Load</button>
+    <button id="extract" class="btn btn-danger navbar-btn">Extract</button>
+	<button id="transform" class="btn btn-danger navbar-btn">Transform</button>
+	<button id="load" class="btn btn-danger navbar-btn">Load</button>
 	<button class="btn btn-danger navbar-btn">Extract, Transform, Load</button>
   </div>
 </nav>
