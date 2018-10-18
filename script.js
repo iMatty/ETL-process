@@ -5,13 +5,19 @@ $(document).ready(function()
 	
 	$("#extract").click(function()
 	{
+		$(this).removeClass("btn btn-danger navbar-btn").addClass("btn btn-success");
 		$("#transform").prop("disabled",false);
 	});
 	
 	$("#transform").click(function()
 	{
+		$(this).removeClass("btn btn-danger navbar-btn").addClass("btn btn-success");
 		$("#load").prop("disabled",false);
 	});
 	
+	$("#load").click(function()
+	{
+		$(this).removeClass("btn btn-danger navbar-btn").addClass("btn btn-success");
+	});
 }
 );
