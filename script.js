@@ -9,16 +9,19 @@ $(document).ready(function()
 		$(this).removeClass("btn btn-danger navbar-btn").addClass("btn btn-success navbar-btn");
 		$("#transform").prop("disabled",false);	
 		$("#extract").prop("disabled",true);
-		
-		$("#siteloader").html('<object data="http://krakow.oglaszamy24.pl/ogloszenia/zwierzeta/psy/amstaf/" />');
-		$('object').css("overflow", "hidden"); 
+
+		$.get("get-website.php", function(data) {
+        var json = {
+            html: JSON.stringify(data),
+            delay: 1
+        };
+        alert(json.html);
+        });
 	});
-	
-	
-	
-	
-	
-	
+
+		
+
+
 	
 	
 	$("#transform").click(function()
