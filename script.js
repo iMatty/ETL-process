@@ -10,17 +10,8 @@ $(document).ready(function()
 		$("#transform").prop("disabled",false);	
 		$("#extract").prop("disabled",true);
 		
-		
-		$.ajax({
-    url : "https://www.olx.pl/zwierzeta/psy/akita/rss/",
-    success : function(result){
-        alert(result);
-    }
-});
-		
-		
-		
-		
+		$("#siteloader").html('<object data="http://krakow.oglaszamy24.pl/ogloszenia/zwierzeta/psy/amstaf/" />');
+		$('object').css("overflow", "hidden"); 
 	});
 	
 	
