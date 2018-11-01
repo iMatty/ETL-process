@@ -15,7 +15,7 @@ $(document).ready(function()
             html: JSON.stringify(data),
             delay: 1
         };
-        alert(json.html);
+		$('#pobranyHtml').val(json.html);
         });
 	});
 
