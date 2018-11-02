@@ -30,11 +30,11 @@ $(document).ready(function()
 		$("#load").prop("disabled",false);
 		$("#transform").prop("disabled",true);
 		
-		$("#transHtml").val($("#pobranyHtml").val());
-		
-		$('#transHtml').val($('#transHtml').val().replace(/^>{3}/,''));
 
-		
+			
+		var str = $('#pobranyHtml').val();
+		var title = str.indexOf("<title>");
+		$('#transHtml').val($('#pobranyHtml').val().slice(title)); //wycina all do pozycji <title>
 	});
 	
 	
