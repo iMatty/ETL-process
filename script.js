@@ -29,7 +29,22 @@ $(document).ready(function()
 		$(this).removeClass("btn btn-danger navbar-btn").addClass("btn btn-success navbar-btn");
 		$("#load").prop("disabled",false);
 		$("#transform").prop("disabled",true);
+		
+		$("#transHtml").val($("#pobranyHtml").val());
+		
+		$('#transHtml').val($('#transHtml').val().replace(/^>{3}/,''));
+
+		
 	});
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	$("#load").click(function()
 	{
