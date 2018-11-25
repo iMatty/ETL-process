@@ -30,22 +30,30 @@ $(document).ready(function()
 		$("#load").prop("disabled",false);
 		$("#transform").prop("disabled",true);
 		
-
-			
 		var str = $('#pobranyHtml').val();
 
-		var title;
+		// iloœæ og³oszeñ
+		var a = '<div class=\\"content__counter\\">';					
+		var iloscOgloszenP = str.indexOf(a) + a.length;
+		var iloscOgloszenK = str.indexOf('</div>', iloscOgloszenP);
+		var iloscOgloszen = $('#pobranyHtml').val().substring(iloscOgloszenP,iloscOgloszenK-12);
+		//$("#boxes").append("Pobrano " + iloscOgloszen + " ogloszen");
+
+		// ogloszenia petla
+		var title;									
 		var titleEnd;
 		var s;
 		var doBoxa="";
-	
-
-		for (var i=0; i<10; i++) { 							// ogloszenia petla
+		for (var i=0; i<15; i++) { 							
 			title = str.indexOf('<a class=\\\"teaser', title+i);
 			titleEnd = str.indexOf("</div>\\n</a>\\n\\n\\n");
 			s = $('#pobranyHtml').val().substring(title,titleEnd);
 			doBoxa += s;
 		}
+
+		
+
+
 
 /*
 		var title1 = str.indexOf('<a class=\\\"teaser'); // 1 ogloszenie
