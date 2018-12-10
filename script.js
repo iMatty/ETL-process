@@ -17,7 +17,7 @@ $(document).ready(function()
         };
 		$('#pobranyHtml').val(json.html);
         });
-	});
+});
 
 		
 
@@ -32,12 +32,12 @@ $(document).ready(function()
 
 		var str = $('#pobranyHtml').val();
 		
-		// iloœæ og³oszeñ
+		// ilosc ogloszen
 		var a = '<div class=\\"content__counter\\">';					
 		var iloscOgloszenP = str.indexOf(a) + a.length;
 		var iloscOgloszenK = str.indexOf('</div>', iloscOgloszenP);
 		var iloscOgloszen = $('#pobranyHtml').val().substring(iloscOgloszenP,iloscOgloszenK-12);
-		//$("#boxes").append("Pobrano " + iloscOgloszen + " ogloszen");
+		$("#boxes").append("Pobrano " + 15 + " ogloszen"); // tu powinno byc iloscOgloszen zamiast "15" ale jeszcze nie skonczylem
 
 
 		// id_ogloszen
