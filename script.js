@@ -37,14 +37,14 @@ $(document).ready(function()
 		var iloscOgloszenP = str.indexOf(a) + a.length;
 		var iloscOgloszenK = str.indexOf('</div>', iloscOgloszenP);
 		var iloscOgloszen = $('#pobranyHtml').val().substring(iloscOgloszenP,iloscOgloszenK-12);
-		$("#boxes").append("Pobrano " + 15 + " ogloszen"); // tu powinno byc iloscOgloszen zamiast "15" ale jeszcze nie skonczylem
+		$("#boxes").append("Pobrano " + 31 + " ogloszen"); // tu powinno byc iloscOgloszen zamiast "32" ale jeszcze nie skonczylem
 
 
 		// id_ogloszen
 		const id_ogloszen = [];
 		var p = 0;
 		var k = 0;
-		for (var i=0; i<15; i++) {				
+		for (var i=0; i<32; i++) {				
 			p = str.indexOf('id=\\"offer-', p+i) + 11;
 			k = str.indexOf('\\"\\n', p);
 			var id_ogloszenia = $('#pobranyHtml').val().substring(p,k);		
@@ -56,7 +56,7 @@ $(document).ready(function()
 		const tytuly_ogloszen = [];
 		var p = 0;
 		var k = 0;
-		for (var i=0; i<15; i++) {				
+		for (var i=0; i<32; i++) {				
 			p = str.indexOf('teaser__title', p+i) + 16;
 			k = str.indexOf('</h2>\\n', p);
 			var tytul_ogloszenia = $('#pobranyHtml').val().substring(p,k);		
@@ -67,7 +67,7 @@ $(document).ready(function()
 		const linki_ogloszenia = [];
 		var p = 0;
 		var k = 0;
-		for (var i=0; i<15; i++) {				
+		for (var i=0; i<32; i++) {				
 			p = str.indexOf('\\n   href=\\"', p+i) + 12;
 			k = str.indexOf('\\"\\n', p);
 			var link_ogloszenia = $('#pobranyHtml').val().substring(p,k);		
@@ -79,7 +79,7 @@ $(document).ready(function()
 		const ceny_psiakow = [];
 		var p = 0;
 		var k = 0;
-		for (var i=0; i<15; i++) {				
+		for (var i=0; i<32; i++) {				
 			p = str.indexOf('teaser__price\\', p+i) + 36;
 			k = str.indexOf('\\n', p);
 			var cena_psiaka = $('#pobranyHtml').val().substring(p,k);		
@@ -92,7 +92,7 @@ $(document).ready(function()
 		const aktualizacje = [];
 		var p = 0;
 		var k = 0;
-		for (var i=0; i<15; i++) {				
+		for (var i=0; i<32; i++) {				
 			p = str.indexOf('Aktualizacja: ', p+i) + 14;
 			k = str.indexOf('</li>\\n', p);
 			var aktualizacja = $('#pobranyHtml').val().substring(p,k);		
@@ -104,7 +104,7 @@ $(document).ready(function()
 
 
 	   	// ogloszenia	
-		for (var i=0; i<15; i++) {
+		for (var i=0; i<32; i++) {
 			$("#transHtml").append("id_ogloszenia: " + id_ogloszen[i] + ", tytul: " + tytuly_ogloszen[i] + ", cena: " + ceny_psiakow[i] + ", ogloszenie_link: " + linki_ogloszenia[i] + ", aktualizacja: " + aktualizacje[i] + ". ");
 		}
 			
