@@ -17,6 +17,8 @@ $(document).ready(function()
         };
 		$('#pobranyHtml').val(json.html);
         });
+		
+		$("#stats").append('- Downloaded HTML: Pobrano kod HTML <a href="https://gratka.pl/zwierzeta/psy/krakow">https://gratka.pl/zwierzeta/psy/krakow</a><br>');
 });
 
 		
@@ -37,7 +39,7 @@ $(document).ready(function()
 		var iloscOgloszenP = str.indexOf(a) + a.length;
 		var iloscOgloszenK = str.indexOf('</div>', iloscOgloszenP);
 		var iloscOgloszen = $('#pobranyHtml').val().substring(iloscOgloszenP,iloscOgloszenK-12);
-		$("#boxes").append("Pobrano " + 31 + " ogloszen"); // tu powinno byc iloscOgloszen zamiast "32" ale jeszcze nie skonczylem
+		$("#stats").append("- Transformed data: Pobrano " + 31 + " ogloszen"); // tu powinno byc iloscOgloszen zamiast "32" ale jeszcze nie skonczylem
 
 
 		// id_ogloszen
