@@ -63,6 +63,17 @@ $(document).ready(function()
 			tytuly_ogloszen[i] = tytul_ogloszenia;
 		}
 
+		// linki_ogloszenia
+		const linki_ogloszenia = [];
+		var p = 0;
+		var k = 0;
+		for (var i=0; i<15; i++) {				
+			p = str.indexOf('\\n   href=\\"', p+i) + 12;
+			k = str.indexOf('\\"\\n', p);
+			var link_ogloszenia = $('#pobranyHtml').val().substring(p,k);		
+			linki_ogloszenia[i] = link_ogloszenia;
+		}
+
 
 		// ceny_psiakow
 		const ceny_psiakow = [];
@@ -82,9 +93,11 @@ $(document).ready(function()
 
 
 
+
+
 	   	// ogloszenia	
 		for (var i=0; i<15; i++) {
-			$("#transHtml").append("id_ogloszenia: " + id_ogloszen[i] + " tytul: " + tytuly_ogloszen[i] + " cena: " + ceny_psiakow[i] + " ");
+			$("#transHtml").append("id_ogloszenia: " + id_ogloszen[i] + ", tytul: " + tytuly_ogloszen[i] + ", cena: " + ceny_psiakow[i] + ", ogloszenie_link: " + linki_ogloszenia[i] + ", ");
 		}
 			
 
