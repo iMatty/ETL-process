@@ -80,7 +80,7 @@ $(document).ready(function()
 		var p = 0;
 		var k = 0;
 		for (var i=0; i<15; i++) {				
-			p = str.indexOf('teaser__price\\', p+i) +36;
+			p = str.indexOf('teaser__price\\', p+i) + 36;
 			k = str.indexOf('\\n', p);
 			var cena_psiaka = $('#pobranyHtml').val().substring(p,k);		
 			ceny_psiakow[i] = cena_psiaka;
@@ -88,19 +88,26 @@ $(document).ready(function()
 		//$("#transHtml").append(ceny_psiakow[0]);
 
 
-
-
-
+		// aktualizacje
+		const aktualizacje = [];
+		var p = 0;
+		var k = 0;
+		for (var i=0; i<15; i++) {				
+			p = str.indexOf('Aktualizacja: ', p+i) + 14;
+			k = str.indexOf('</li>\\n', p);
+			var aktualizacja = $('#pobranyHtml').val().substring(p,k);		
+			aktualizacje[i] = aktualizacja;
+		}
+		//$("#transHtml").append(aktualizacje[0]);
 
 
 
 
 	   	// ogloszenia	
 		for (var i=0; i<15; i++) {
-			$("#transHtml").append("id_ogloszenia: " + id_ogloszen[i] + ", tytul: " + tytuly_ogloszen[i] + ", cena: " + ceny_psiakow[i] + ", ogloszenie_link: " + linki_ogloszenia[i] + ", ");
+			$("#transHtml").append("id_ogloszenia: " + id_ogloszen[i] + ", tytul: " + tytuly_ogloszen[i] + ", cena: " + ceny_psiakow[i] + ", ogloszenie_link: " + linki_ogloszenia[i] + ", aktualizacja: " + aktualizacje[i] + ". ");
 		}
 			
-
 
 
 	
