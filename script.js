@@ -107,7 +107,7 @@ $(document).ready(function()
 
 	   	// ogloszenia	
 		for (var i=0; i<32; i++) {
-			$("#transHtml").append("id_ogloszenia: " + id_ogloszen[i] + ", tytul: " + tytuly_ogloszen[i] + ", cena: " + ceny_psiakow[i] + ", ogloszenie_link: " + linki_ogloszenia[i] + ", aktualizacja: " + aktualizacje[i] + ". ");
+			$("#transHtml").append(id_ogloszen[i] +"\t" + tytuly_ogloszen[i] +"\t" + ceny_psiakow[i] +"\t" + linki_ogloszenia[i] +"\t" + aktualizacje[i] + "\n");
 		}
 			
 

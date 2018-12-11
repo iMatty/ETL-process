@@ -1,3 +1,0 @@
-123457	Szczeniaki dog niemiecki	2018-09-15	2018-09-21	FCI	Krakow	on	2500.99	tak	od zaraz
-123456	Szczeniaki dog niemiecki	2018-09-15	2018-09-21	FCI	Warszawa	on	2500.99	nie	od zaraz
-123458	Szczeniaki dog niemiecki	2018-09-15	2018-09-21	FCI	Krakow	on	2500.99	tak	od zaraz
