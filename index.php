@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <title>ETL</title>
@@ -9,6 +10,21 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="script.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<?php
+
+$fileWrite = '';    
+$myFile = "data.txt";
+if(isset($_POST['fileWrite']) && !empty($_POST['fileWrite'])) {
+$fileWrite = $_POST['fileWrite'].PHP_EOL;
+}
+if($fileWrite) {
+$fh = fopen($myFile, 'a') or die("can't open file"); //Make sure you have permission
+fwrite($fh, $fileWrite);
+fclose($fh);
+}
+?>
+
+
 </head>
 <body>
 
@@ -31,16 +47,19 @@
 	Downloaded HTML: <br>
 	<textarea rows="4" cols="50" id="pobranyHtml" readonly></textarea>
 	<br>
+
+	<form method="post" target="_blank">
 	Transformed data: <br>
-	<textarea rows="4" cols="50" id="transHtml" readonly></textarea>
+	<textarea type="text" name="fileWrite" rows="4" cols="50" id="transHtml" readonly></textarea>
+	<input type="submit" value="zapisz do pliku .txt" id="zapisz"/>
+	</form>
 	
 	<div id="stats">
 	Console: <br>
 	</div>
+
+
 </div>
-
-
-
 
 </body>
 </html>
