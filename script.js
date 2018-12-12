@@ -138,11 +138,9 @@ $(document).ready(function()
                      success: function(response) {
                         $("#response").html(response);
                         alert(response);
-                     } 
-               
-	
-		
-	});
+                     } 	
+		});
+
 });	
 }
 );
