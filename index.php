@@ -24,6 +24,7 @@ fclose($fh);
 }
 ?>
 
+
 </head>
 <body>
 
@@ -49,7 +50,7 @@ fclose($fh);
 	<form method="post">
 	Transformed data: <br>
 	<textarea type="text" name="fileWrite" rows="4" cols="50" id="transHtml" readonly></textarea>
-	<input type="submit" value="zapisz" class="submitClass"/>
+	<input type="submit" value="zapisz do pliku .txt" id="zapisz"/>
 	</form>
 	
 	<div id="stats">
