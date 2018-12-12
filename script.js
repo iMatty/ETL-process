@@ -143,8 +143,6 @@ $(document).ready(function()
 	});	
 
 	$("#ogloszenia").click(function() {
-		$(this).removeClass("btn btn-danger navbar-btn").addClass("btn btn-success navbar-btn");
-
                 var dataString={};
                 $.ajax({                                      
                      url:"ogloszenia.php",
@@ -155,15 +153,13 @@ $(document).ready(function()
                      timeout:10000,
                      error: function() { },     
                      success: function(response) {
-                        $("#response").html(response);
-                        alert(response);
+                        $("#dane_z_bazy").html(response);
+                        //alert(response);
                      } 	
 		});
 	});
 
 	$("#usun").click(function() {
-		$(this).removeClass("btn btn-danger navbar-btn").addClass("btn btn-success navbar-btn");
-
                 var dataString={};
                 $.ajax({                                      
                      url:"delete.php",

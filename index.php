@@ -39,8 +39,8 @@ fclose($fh);
 	<button id="load" class="btn btn-danger navbar-btn">Load</button>
 	<button class="btn btn-danger navbar-btn">Extract, Transform, Load</button>
 	*   *   *
-	<button id="ogloszenia" class="btn btn-danger navbar-btn">Pokaż ogłoszenia z bazy</button>
-	<button id="usun" class="btn btn-danger navbar-btn">Usun zawartosc bazy</button>
+	<button id="ogloszenia" class="btn btn-primary">Pokaż ogłoszenia z bazy</button>
+	<button id="usun" class="btn btn-primary">Usun zawartosc bazy</button>
 
   </div>
 </nav>
@@ -60,7 +60,9 @@ fclose($fh);
 	
 	<div id="stats">
 	Console: <br>
+		<div id="dane_z_bazy"></div>
 	</div>
+
 
 
 </div>
