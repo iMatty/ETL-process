@@ -47,7 +47,8 @@ fclose($fh);
 	Downloaded HTML: <br>
 	<textarea rows="4" cols="50" id="pobranyHtml" readonly></textarea>
 	<br>
-	<form method="post">
+
+	<form method="post" target="_blank">
 	Transformed data: <br>
 	<textarea type="text" name="fileWrite" rows="4" cols="50" id="transHtml" readonly></textarea>
 	<input type="submit" value="zapisz do pliku .txt" id="zapisz"/>
@@ -56,6 +57,7 @@ fclose($fh);
 	<div id="stats">
 	Console: <br>
 	</div>
+
 
 </div>
 
