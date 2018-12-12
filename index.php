@@ -38,6 +38,10 @@ fclose($fh);
 	<button id="transform" class="btn btn-danger navbar-btn">Transform</button>
 	<button id="load" class="btn btn-danger navbar-btn">Load</button>
 	<button class="btn btn-danger navbar-btn">Extract, Transform, Load</button>
+	*   *   *
+	<button id="ogloszenia" class="btn btn-danger navbar-btn">Pokaż ogłoszenia z bazy</button>
+	<button id="usun" class="btn btn-danger navbar-btn">Usun zawartosc bazy</button>
+
   </div>
 </nav>
 
@@ -51,7 +55,7 @@ fclose($fh);
 	<form method="post" target="_blank">
 	Transformed data: <br>
 	<textarea type="text" name="fileWrite" rows="4" cols="50" id="transHtml" readonly></textarea>
-	<input type="submit" value="zapisz do pliku .txt" id="zapisz"/>
+	<input class="btn btn-danger navbar-btn" type="submit" value="zapisz do pliku .txt" id="zapisz"/>
 	</form>
 	
 	<div id="stats">

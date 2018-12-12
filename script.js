@@ -140,7 +140,47 @@ $(document).ready(function()
                         alert(response);
                      } 	
 		});
+	});	
 
-});	
-}
-);
+	$("#ogloszenia").click(function() {
+		$(this).removeClass("btn btn-danger navbar-btn").addClass("btn btn-success navbar-btn");
+
+                var dataString={};
+                $.ajax({                                      
+                     url:"ogloszenia.php",
+                     type: 'POST',
+                     cache:false,
+                     data: dataString,
+                     beforeSend: function() {},
+                     timeout:10000,
+                     error: function() { },     
+                     success: function(response) {
+                        $("#response").html(response);
+                        alert(response);
+                     } 	
+		});
+	});
+
+	$("#usun").click(function() {
+		$(this).removeClass("btn btn-danger navbar-btn").addClass("btn btn-success navbar-btn");
+
+                var dataString={};
+                $.ajax({                                      
+                     url:"delete.php",
+                     type: 'POST',
+                     cache:false,
+                     data: dataString,
+                     beforeSend: function() {},
+                     timeout:10000,
+                     error: function() { },     
+                     success: function(response) {
+                        $("#response").html(response);
+                        alert(response);
+                     } 	
+		});
+	});	
+	
+
+
+
+});
