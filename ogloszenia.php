@@ -1,4 +1,3 @@
-
 <?php
 $servername = "sbazy.uek.krakow.pl";
 $username = "s194864";
@@ -19,7 +18,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "id og≥oszenia: " . $row["id_ogloszenia"]. "; Tytu≥: " . $row["tytul"] ."; Cena: " . $row["cena"] . "; Link do og≥oszenia: " . $row["link"] . "; Ostatnia aktualizacja: " . $row["aktualizacja"] . "<br>";
+        echo "id og≈Çoszenia: " . $row["id_ogloszenia"]. "; Tytu≈Ç: " . $row["tytul"] ."; Cena: " . $row["cena"] . "; Link do og≈Çoszenia: " . $row["link"] . "; Ostatnia aktualizacja: " . $row["aktualizacja"] . "<br>";
     }
 } else {
     echo "0 results";
