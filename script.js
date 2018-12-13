@@ -87,7 +87,6 @@ $(document).ready(function()
 			var cena_psiaka = $('#pobranyHtml').val().substring(p,k);		
 			ceny_psiakow[i] = cena_psiaka;
 		}
-		//$("#transHtml").append(ceny_psiakow[0]);
 
 
 		// aktualizacje
@@ -100,9 +99,6 @@ $(document).ready(function()
 			var aktualizacja = $('#pobranyHtml').val().substring(p,k);		
 			aktualizacje[i] = aktualizacja;
 		}
-		//$("#transHtml").append(aktualizacje[0]);
-
-
 
 
 	   	// ogloszenia	
@@ -190,26 +186,33 @@ $(document).ready(function()
 
 
 
+
+
+
+
+
+	// Extract, transport, load na raz
 	$("#complete").click(function() {
+		//extract
 		$(this).removeClass("btn btn-danger navbar-btn").addClass("btn btn-success navbar-btn");
-		$("#transform").prop("disabled",false);	
+		$("#transform").prop("disabled",true);	
 		$("#extract").prop("disabled",true);
+		$("#load").prop("disabled",true);
+		$("#complete").prop("disabled",true);
 
 		$.get("get-website.php", function(data) {
-        		var json = {
-            	html: JSON.stringify(data),
-            	delay: 1
-        		};
+       		 var json = {
+            		html: JSON.stringify(data),
+            		delay: 1
+        	};
 		$('#pobranyHtml').val(json.html);
-       		});
-			
+        	});
+		
 		$("#stats").append('- Downloaded HTML: <a href="https://gratka.pl/zwierzeta/psy/krakow">https://gratka.pl/zwierzeta/psy/krakow</a><br>');
+		
 
-		$("#load").prop("disabled",false);
-		$("#transform").prop("disabled",true);
-
-		$("#zapisz").prop("disabled",false);
-	
+		
+		//transform
 		var str = $('#pobranyHtml').val();
 		
 		// ilosc ogloszen
@@ -217,7 +220,8 @@ $(document).ready(function()
 		var iloscOgloszenP = str.indexOf(a) + a.length;
 		var iloscOgloszenK = str.indexOf('</div>', iloscOgloszenP);
 		var iloscOgloszen = $('#pobranyHtml').val().substring(iloscOgloszenP,iloscOgloszenK-12);
-		$("#stats").append("- Transformed data: Downloaded " + 31 + " publications");
+		$("#stats").append("- Transformed data: Transformed " + 31 + " publications"); //
+
 
 		// id_ogloszen
 		const id_ogloszen = [];
@@ -264,7 +268,6 @@ $(document).ready(function()
 			var cena_psiaka = $('#pobranyHtml').val().substring(p,k);		
 			ceny_psiakow[i] = cena_psiaka;
 		}
-		//$("#transHtml").append(ceny_psiakow[0]);
 
 
 		// aktualizacje
@@ -277,8 +280,6 @@ $(document).ready(function()
 			var aktualizacja = $('#pobranyHtml').val().substring(p,k);		
 			aktualizacje[i] = aktualizacja;
 		}
-		//$("#transHtml").append(aktualizacje[0]);
-
 
 
 
@@ -288,11 +289,12 @@ $(document).ready(function()
 			if (i<31) {
 			$("#transHtml").append("\n");
  			}
-		}			
-		$(this).removeClass("btn btn-danger navbar-btn").addClass("btn btn-success navbar-btn");
-		$("#load").prop("disabled",true);
-		$("#stats").append("<br>- Data has been loaded to database");
-                var dataString={};
+		}
+
+
+
+		//load
+		var dataString={};
                 $.ajax({                                      
                      url:"load.php",
                      type: 'POST',
@@ -302,9 +304,57 @@ $(document).ready(function()
                      timeout:10000,
                      error: function() { },     
                      success: function(response) {
-                        $("#response").html(response);
-                        alert(response);
+                        $("#stats").append("<br>- " + response);
+                     } 	
+		});
+	});	
+
+	$("#ogloszenia").click(function() {
+                var dataString={};
+                $.ajax({                                      
+                     url:"ogloszenia.php",
+                     type: 'POST',
+                     cache:false,
+                     data: dataString,
+                     beforeSend: function() {},
+                     timeout:10000,
+                     error: function() { },     
+                     success: function(response) {
+                        $("#stats").html(response);
+                       } 	
+		});
+	});
+
+	$("#usun").click(function() {
+                var dataString={};
+                $.ajax({                                      
+                     url:"delete.php",
+                     type: 'POST',
+                     cache:false,
+                     data: dataString,
+                     beforeSend: function() {},
+                     timeout:10000,
+                     error: function() { },     
+                     success: function(response) {
+                        $("#stats").html("- " + response);
                      } 	
 		});
 	});
+
+	$("#save").click(function() {
+                var dataString={};
+                $.ajax({                                      
+                     url:"save.php",
+                     type: 'POST',
+                     cache:false,
+                     data: dataString,
+                     beforeSend: function() {},
+                     timeout:10000,
+                     error: function() { },     
+                     success: function(response) {
+                        $("#stats").html(response);
+                     } 	
+		});
+	});			
+
 });
