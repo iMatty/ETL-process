@@ -55,7 +55,7 @@ fclose($fh);
 	<form method="post" target="_blank">
 		Transformed data: <br>
 		<textarea type="text" name="fileWrite" rows="4" cols="50" id="transHtml" readonly></textarea>
-		<input class="btn btn-danger navbar-btn" type="submit" value="zapisz do pliku .txt" id="zapisz"/>
+		<input class="btn btn-info" type="submit" value="zapisz do pliku .txt" id="zapisz"/>
 	</form>
 
 	Console: <br>
