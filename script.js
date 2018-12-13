@@ -209,7 +209,7 @@ $(document).ready(function()
 		$('#pobranyHtml').val(json.html);
         	});
 		
-		$("#stats").append('- Downloaded HTML: <a href="https://gratka.pl/zwierzeta/psy/krakow">https://gratka.pl/zwierzeta/psy/krakow</a><br>');
+		$("#stats").html('- Downloaded HTML: <a href="https://gratka.pl/zwierzeta/psy/krakow">https://gratka.pl/zwierzeta/psy/krakow</a><br>');
 		
 		setTimeout(function() {
     		//transform
@@ -297,6 +297,7 @@ $(document).ready(function()
 
 		//load
 		$("#zapisz").attr("id","zapiszC");
+		$("#zapiszC").attr("value","confirm");
 		$("#zapiszC").click(function() {
 
 

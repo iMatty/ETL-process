@@ -19,14 +19,18 @@
     <div class="navbar-header">
       <a class="navbar-brand" href="index.html">ETL</a>
     </div>
-    <button id="extract" class="btn btn-danger navbar-btn">Extract</button>
+    	<button id="extract" class="btn btn-danger navbar-btn">Extract</button>
 	<button id="transform" class="btn btn-danger navbar-btn">Transform</button>
 	<button id="load" class="btn btn-danger navbar-btn">Load</button>
 	*   *   *
-	<button id="ogloszenia" class="btn btn-primary">Show database content</button>
-	<button id="usun" class="btn btn-primary">Delete database content</button>
+	<button id="ogloszenia" class="btn btn-primary navbar-btn">Show database content</button>
+	<button id="usun" class="btn btn-primary navbar-btn">Delete database content</button>
+	*   *   *
 	<a href="save.php" download>
-  		<button class="btn btn-warning"> Download .csv database data</button>
+  		<button class="btn btn-warning navbar-btn"> Download .csv database data</button>
+	</a>
+	<a href="index.html">
+  		<button class="btn btn-secondary">Restart APP</button>
 	</a>
 	<form method="post" action="zapisz.php" target="_blank">
 		<input id="complete" class="btn btn-danger navbar-btn" type="submit" value="Extract, Transform, Load"/>
