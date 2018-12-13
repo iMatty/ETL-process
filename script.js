@@ -14,13 +14,14 @@ $(document).ready(function()
 		$("#complete").prop("disabled",true);
 
 		$.get("get-website.php", function(data) {
-        var json = {
-            html: JSON.stringify(data),
-            delay: 1
-        };
+        	var json = {
+            	html: JSON.stringify(data),
+            	delay: 1
+        	};
 		$('#pobranyHtml').val(json.html);
-        });
+        	});
 		
+
 		$("#stats").html('- Downloaded HTML: <a href="https://gratka.pl/zwierzeta/psy/krakow">https://gratka.pl/zwierzeta/psy/krakow</a><br>');
 });
 
@@ -37,16 +38,17 @@ $(document).ready(function()
 		// ilosc ogloszen
 		var a = '<div class=\\"content__counter\\">';					
 		var iloscOgloszenP = str.indexOf(a) + a.length;
-		var iloscOgloszenK = str.indexOf('</div>', iloscOgloszenP);
-		var iloscOgloszen = $('#pobranyHtml').val().substring(iloscOgloszenP,iloscOgloszenK-12);
-		$("#stats").html("- Transformed data: Transformed " + 31 + " publications"); //
-
+		var iloscOgloszenK = str.indexOf('</div>', iloscOgloszenP) - 9;
+		var iloscOgloszen = $('#pobranyHtml').val().substring(iloscOgloszenP,iloscOgloszenK);
+		$("#stats").html("- Transformed data: Transformed " + iloscOgloszen + " publications"); //
 
 		// id_ogloszen
+		var a = iloscOgloszen;
+
 		const id_ogloszen = [];
 		var p = 0;
 		var k = 0;
-		for (var i=0; i<32; i++) {				
+		for (var i=0; i<a; i++) {				
 			p = str.indexOf('id=\\"offer-', p+i) + 11;
 			k = str.indexOf('\\"\\n', p);
 			var id_ogloszenia = $('#pobranyHtml').val().substring(p,k);		
@@ -58,7 +60,7 @@ $(document).ready(function()
 		const tytuly_ogloszen = [];
 		var p = 0;
 		var k = 0;
-		for (var i=0; i<32; i++) {				
+		for (var i=0; i<a; i++) {				
 			p = str.indexOf('teaser__title', p+i) + 16;
 			k = str.indexOf('</h2>\\n', p);
 			var tytul_ogloszenia = $('#pobranyHtml').val().substring(p,k);		
@@ -69,7 +71,7 @@ $(document).ready(function()
 		const linki_ogloszenia = [];
 		var p = 0;
 		var k = 0;
-		for (var i=0; i<32; i++) {				
+		for (var i=0; i<a; i++) {				
 			p = str.indexOf('\\n   href=\\"', p+i) + 12;
 			k = str.indexOf('\\"\\n', p);
 			var link_ogloszenia = $('#pobranyHtml').val().substring(p,k);		
@@ -81,7 +83,7 @@ $(document).ready(function()
 		const ceny_psiakow = [];
 		var p = 0;
 		var k = 0;
-		for (var i=0; i<32; i++) {				
+		for (var i=0; i<a; i++) {				
 			p = str.indexOf('teaser__price\\', p+i) + 36;
 			k = str.indexOf('\\n', p);
 			var cena_psiaka = $('#pobranyHtml').val().substring(p,k);		
@@ -93,7 +95,7 @@ $(document).ready(function()
 		const aktualizacje = [];
 		var p = 0;
 		var k = 0;
-		for (var i=0; i<32; i++) {				
+		for (var i=0; i<a; i++) {				
 			p = str.indexOf('Aktualizacja: ', p+i) + 14;
 			k = str.indexOf('</li>\\n', p);
 			var aktualizacja = $('#pobranyHtml').val().substring(p,k);		
@@ -102,9 +104,9 @@ $(document).ready(function()
 
 
 	   	// ogloszenia	
-		for (var i=0; i<32; i++) {
+		for (var i=0; i<a; i++) {
 			$("#transHtml").append(id_ogloszen[i] +"\t" + tytuly_ogloszen[i] +"\t" + ceny_psiakow[i] +"\t" + linki_ogloszenia[i] +"\t" + aktualizacje[i]);
-			if (i<31) {
+			if (i<a-1) {
 			$("#transHtml").append("\n");
  			}
 		}			
