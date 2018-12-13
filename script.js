@@ -199,6 +199,7 @@ $(document).ready(function()
 		$("#extract").prop("disabled",true);
 		$("#load").prop("disabled",true);
 		$("#complete").prop("disabled",true);
+		$("#zapisz").prop("disabled",false);
 
 		$.get("get-website.php", function(data) {
        		 var json = {
@@ -210,9 +211,8 @@ $(document).ready(function()
 		
 		$("#stats").append('- Downloaded HTML: <a href="https://gratka.pl/zwierzeta/psy/krakow">https://gratka.pl/zwierzeta/psy/krakow</a><br>');
 		
-
-		
-		//transform
+		setTimeout(function() {
+    		//transform
 		var str = $('#pobranyHtml').val();
 		
 		// ilosc ogloszen
@@ -290,12 +290,18 @@ $(document).ready(function()
 			$("#transHtml").append("\n");
  			}
 		}
+		}, 1500);
+		
 
 
 
 		//load
+		$("#zapisz").attr("id","zapiszC");
+		$("#zapiszC").click(function() {
+
+
 		var dataString={};
-                $.ajax({                                      
+                	$.ajax({                                      
                      url:"load.php",
                      type: 'POST',
                      cache:false,
@@ -355,6 +361,13 @@ $(document).ready(function()
                         $("#stats").html(response);
                      } 	
 		});
-	});			
+	});
+});
+
+
+
+
+
+					
 
 });
