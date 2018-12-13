@@ -18,7 +18,7 @@ if(isset($_POST['fileWrite']) && !empty($_POST['fileWrite'])) {
 $fileWrite = $_POST['fileWrite'].PHP_EOL;
 }
 if($fileWrite) {
-$fh = fopen($myFile, 'a') or die("can't open file"); //Make sure you have permission
+$fh = fopen($myFile, 'w') or die("can't open file"); //Make sure you have permission
 fwrite($fh, $fileWrite);
 fclose($fh);
 }
