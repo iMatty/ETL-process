@@ -23,11 +23,6 @@ $(document).ready(function()
 		$("#stats").html('- Downloaded HTML: Pobrano kod HTML <a href="https://gratka.pl/zwierzeta/psy/krakow">https://gratka.pl/zwierzeta/psy/krakow</a><br>');
 });
 
-		
-
-
-	
-	
 	$("#transform").click(function()
 	{
 		$(this).removeClass("btn btn-danger navbar-btn").addClass("btn btn-success navbar-btn");

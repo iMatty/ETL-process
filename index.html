@@ -10,21 +10,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="script.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<?php
-
-$fileWrite = '';    
-$myFile = "data.txt";
-if(isset($_POST['fileWrite']) && !empty($_POST['fileWrite'])) {
-$fileWrite = $_POST['fileWrite'].PHP_EOL;
-}
-if($fileWrite) {
-$fh = fopen($myFile, 'w') or die("can't open file"); //Make sure you have permission
-fwrite($fh, $fileWrite);
-fclose($fh);
-}
-?>
-
-
+  
 </head>
 <body>
 
@@ -52,7 +38,7 @@ fclose($fh);
 	<textarea rows="4" cols="50" id="pobranyHtml" readonly></textarea>
 	<br>
 
-	<form method="post" target="_blank">
+	<form method="post" action="zapisz.php" target="_blank">
 		Transformed data: <br>
 		<textarea type="text" name="fileWrite" rows="4" cols="50" id="transHtml" readonly></textarea>
 		<input class="btn btn-info" type="submit" value="zapisz do pliku .txt" id="zapisz"/>
