@@ -1,4 +1,4 @@
-Gotowe. Można zamknąć to okno.
+Done. You can close this window and back to application tab.
 <?php
 
 	$fileWrite = '';    

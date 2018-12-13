@@ -11,6 +11,7 @@ $(document).ready(function()
 		$(this).removeClass("btn btn-danger navbar-btn").addClass("btn btn-success navbar-btn");
 		$("#transform").prop("disabled",false);	
 		$("#extract").prop("disabled",true);
+		$("#complete").prop("disabled",true);
 
 		$.get("get-website.php", function(data) {
         var json = {
@@ -20,7 +21,7 @@ $(document).ready(function()
 		$('#pobranyHtml').val(json.html);
         });
 		
-		$("#stats").html('- Downloaded HTML: Pobrano kod HTML <a href="https://gratka.pl/zwierzeta/psy/krakow">https://gratka.pl/zwierzeta/psy/krakow</a><br>');
+		$("#stats").html('- Downloaded HTML: <a href="https://gratka.pl/zwierzeta/psy/krakow">https://gratka.pl/zwierzeta/psy/krakow</a><br>');
 });
 
 	$("#transform").click(function()
@@ -38,7 +39,7 @@ $(document).ready(function()
 		var iloscOgloszenP = str.indexOf(a) + a.length;
 		var iloscOgloszenK = str.indexOf('</div>', iloscOgloszenP);
 		var iloscOgloszen = $('#pobranyHtml').val().substring(iloscOgloszenP,iloscOgloszenK-12);
-		$("#stats").html("- Transformed data: Pobrano " + 31 + " ogloszen"); // tu powinno byc iloscOgloszen zamiast "32" ale jeszcze nie skonczylem
+		$("#stats").html("- Transformed data: Transformed " + 31 + " publications"); //
 
 
 		// id_ogloszen
@@ -120,7 +121,7 @@ $(document).ready(function()
 	$("#load").click(function() {
 		$(this).removeClass("btn btn-danger navbar-btn").addClass("btn btn-success navbar-btn");
 		$("#load").prop("disabled",true);
-		$("#stats").html("- Dane zostaly zaladowane do bazy.");
+		$("#zapisz").prop("disabled",true);
                 var dataString={};
                 $.ajax({                                      
                      url:"load.php",
@@ -131,8 +132,7 @@ $(document).ready(function()
                      timeout:10000,
                      error: function() { },     
                      success: function(response) {
-                        $("#response").html(response);
-                        alert(response);
+                        $("#stats").html("- " + response);
                      } 	
 		});
 	});	
@@ -149,8 +149,7 @@ $(document).ready(function()
                      error: function() { },     
                      success: function(response) {
                         $("#stats").html(response);
-                        //alert(response);
-                     } 	
+                       } 	
 		});
 	});
 
@@ -165,8 +164,7 @@ $(document).ready(function()
                      timeout:10000,
                      error: function() { },     
                      success: function(response) {
-                        $("#response").html(response);
-                        alert(response);
+                        $("#stats").html("- " + response);
                      } 	
 		});
 	});
@@ -182,8 +180,7 @@ $(document).ready(function()
                      timeout:10000,
                      error: function() { },     
                      success: function(response) {
-                        $("#response").html(response);
-                        alert(response);
+                        $("#stats").html(response);
                      } 	
 		});
 	});	
@@ -206,7 +203,7 @@ $(document).ready(function()
 		$('#pobranyHtml').val(json.html);
        		});
 			
-		$("#stats").append('- Downloaded HTML: Pobrano kod HTML <a href="https://gratka.pl/zwierzeta/psy/krakow">https://gratka.pl/zwierzeta/psy/krakow</a><br>');
+		$("#stats").append('- Downloaded HTML: <a href="https://gratka.pl/zwierzeta/psy/krakow">https://gratka.pl/zwierzeta/psy/krakow</a><br>');
 
 		$("#load").prop("disabled",false);
 		$("#transform").prop("disabled",true);
@@ -220,8 +217,7 @@ $(document).ready(function()
 		var iloscOgloszenP = str.indexOf(a) + a.length;
 		var iloscOgloszenK = str.indexOf('</div>', iloscOgloszenP);
 		var iloscOgloszen = $('#pobranyHtml').val().substring(iloscOgloszenP,iloscOgloszenK-12);
-		$("#stats").append("- Transformed data: Pobrano " + 31 + " ogloszen"); // tu powinno byc iloscOgloszen zamiast "32" ale jeszcze nie skonczylem
-
+		$("#stats").append("- Transformed data: Downloaded " + 31 + " publications");
 
 		// id_ogloszen
 		const id_ogloszen = [];
@@ -295,7 +291,7 @@ $(document).ready(function()
 		}			
 		$(this).removeClass("btn btn-danger navbar-btn").addClass("btn btn-success navbar-btn");
 		$("#load").prop("disabled",true);
-		$("#stats").append("<br>- Dane zostaly zaladowane do bazy.");
+		$("#stats").append("<br>- Data has been loaded to database");
                 var dataString={};
                 $.ajax({                                      
                      url:"load.php",
