@@ -37,7 +37,7 @@ fclose($fh);
     <button id="extract" class="btn btn-danger navbar-btn">Extract</button>
 	<button id="transform" class="btn btn-danger navbar-btn">Transform</button>
 	<button id="load" class="btn btn-danger navbar-btn">Load</button>
-	<button class="btn btn-danger navbar-btn">Extract, Transform, Load</button>
+	<button id="complete" class="btn btn-danger navbar-btn">Extract, Transform, Load</button>
 	*   *   *
 	<button id="ogloszenia" class="btn btn-primary">Pokaż ogłoszenia z bazy</button>
 	<button id="usun" class="btn btn-primary">Usun zawartosc bazy</button>
