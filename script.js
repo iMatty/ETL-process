@@ -20,7 +20,7 @@ $(document).ready(function()
 		$('#pobranyHtml').val(json.html);
         });
 		
-		$("#stats").append('- Downloaded HTML: Pobrano kod HTML <a href="https://gratka.pl/zwierzeta/psy/krakow">https://gratka.pl/zwierzeta/psy/krakow</a><br>');
+		$("#stats").html('- Downloaded HTML: Pobrano kod HTML <a href="https://gratka.pl/zwierzeta/psy/krakow">https://gratka.pl/zwierzeta/psy/krakow</a><br>');
 });
 
 		
@@ -43,7 +43,7 @@ $(document).ready(function()
 		var iloscOgloszenP = str.indexOf(a) + a.length;
 		var iloscOgloszenK = str.indexOf('</div>', iloscOgloszenP);
 		var iloscOgloszen = $('#pobranyHtml').val().substring(iloscOgloszenP,iloscOgloszenK-12);
-		$("#stats").append("- Transformed data: Pobrano " + 31 + " ogloszen"); // tu powinno byc iloscOgloszen zamiast "32" ale jeszcze nie skonczylem
+		$("#stats").html("- Transformed data: Pobrano " + 31 + " ogloszen"); // tu powinno byc iloscOgloszen zamiast "32" ale jeszcze nie skonczylem
 
 
 		// id_ogloszen
@@ -125,7 +125,7 @@ $(document).ready(function()
 	$("#load").click(function() {
 		$(this).removeClass("btn btn-danger navbar-btn").addClass("btn btn-success navbar-btn");
 		$("#load").prop("disabled",true);
-		$("#stats").append("<br>- Dane zostaly zaladowane do bazy.");
+		$("#stats").html("- Dane zostaly zaladowane do bazy.");
                 var dataString={};
                 $.ajax({                                      
                      url:"load.php",
@@ -153,7 +153,7 @@ $(document).ready(function()
                      timeout:10000,
                      error: function() { },     
                      success: function(response) {
-                        $("#dane_z_bazy").html(response);
+                        $("#stats").html(response);
                         //alert(response);
                      } 	
 		});
