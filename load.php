@@ -15,7 +15,7 @@ if ($conn->connect_error) {
 $sql = "LOAD DATA LOCAL INFILE 'data.txt' 
 INTO TABLE ogloszenia COLUMNS TERMINATED BY '\t'";
 if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
+    echo "New records created successfully";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

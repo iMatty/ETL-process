@@ -169,7 +169,25 @@ $(document).ready(function()
                         alert(response);
                      } 	
 		});
+	});
+
+	$("#save").click(function() {
+                var dataString={};
+                $.ajax({                                      
+                     url:"save.php",
+                     type: 'POST',
+                     cache:false,
+                     data: dataString,
+                     beforeSend: function() {},
+                     timeout:10000,
+                     error: function() { },     
+                     success: function(response) {
+                        $("#response").html(response);
+                        alert(response);
+                     } 	
+		});
 	});	
+
 	
 
 

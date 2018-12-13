@@ -1,3 +1,4 @@
+Gotowe. Można zamknąć to okno.
 <?php
 
 	$fileWrite = '';    

@@ -28,6 +28,10 @@
 	<button id="ogloszenia" class="btn btn-primary">Pokaż ogłoszenia z bazy</button>
 	<button id="usun" class="btn btn-primary">Usun zawartosc bazy</button>
 
+		<a href="save.php" download>
+  			<button class="btn btn-warning"> Download .csv database data</button>
+		</a>
+
   </div>
 </nav>
 
@@ -41,7 +45,7 @@
 	<form method="post" action="zapisz.php" target="_blank">
 		Transformed data: <br>
 		<textarea type="text" name="fileWrite" rows="4" cols="50" id="transHtml" readonly></textarea>
-		<input class="btn btn-info" type="submit" value="zapisz do pliku .txt" id="zapisz"/>
+		<input class="btn btn-info" type="submit" value="prepare to load" id="zapisz"/>
 	</form>
 
 	Console: <br>
