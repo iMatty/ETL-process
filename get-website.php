@@ -9,8 +9,4 @@
 	echo $html_2;
 	echo $html_3;
 	echo $html_4;
-
-
-
-
 ?>

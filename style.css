@@ -4,14 +4,6 @@ margin-left:10px;
 margin-right:10px;
 }
 
-
-
-
-
-
-
-
-
 html, body {
     height: 100%;
 }
@@ -23,4 +15,4 @@ div {
 object {
     width: 100%;
     min-height: 100%;
-}    
+}
