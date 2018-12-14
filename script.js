@@ -3,7 +3,7 @@ $(document).ready(function()
 	$("#extract").prop("enabled",true);
 	$("#transform").prop("disabled",true);
 	$("#load").prop("disabled",true);
-
+	$("#stats").css("fontSize", "13px");
 	$("#zapisz").prop("disabled",true);
 	
 	$("#extract").click(function()
@@ -28,11 +28,12 @@ $(document).ready(function()
 	$("#transform").click(function()
 	{
 		$(this).removeClass("btn btn-danger navbar-btn").addClass("btn btn-success navbar-btn");
-		$("#load").prop("disabled",false);
 		$("#transform").prop("disabled",true);
-
 		$("#zapisz").prop("disabled",false);
-	
+
+		
+			
+
 		var str = $('#pobranyHtml').val();
 		
 		// ilosc ogloszen
@@ -110,11 +111,12 @@ $(document).ready(function()
 			$("#transHtml").append("\n");
  			}
 		}			
-
-
 	
-});
+	});
 
+	$("#zapisz").click(function() {
+		$("#load").prop("disabled",false);
+	});
 	
 	$("#load").click(function() {
 		$(this).removeClass("btn btn-danger navbar-btn").addClass("btn btn-success navbar-btn");
@@ -146,7 +148,8 @@ $(document).ready(function()
                      timeout:10000,
                      error: function() { },     
                      success: function(response) {
-                        $("#stats").html(response);
+			$("#stats").html("<b>- To find intresting offer for you, click ctrl+f :)<br><b>");
+                        $("#stats").append(response);
                        } 	
 		});
 	});
@@ -329,7 +332,8 @@ $(document).ready(function()
                      timeout:10000,
                      error: function() { },     
                      success: function(response) {
-                        $("#stats").html(response);
+			$("#stats").html("<b>- To find intresting offer for you, click ctrl+f :)<br><b>");
+                        $("#stats").append(response);
                        } 	
 		});
 	});
